@@ -16,12 +16,14 @@ import io.swagger.v3.oas.annotations.servers.Server;
 
 //@SecurityScheme(name = "/", scheme = "jwt", type = SecuritySchemeType.HTTP, in = SecuritySchemeIn.HEADER)
 
-@OpenAPIDefinition(info = @Info(title = "REST API", version = "1.1",
-contact = @Contact(name = "Chinna", email = "java4chinna@gmail.com")),
-security = {@SecurityRequirement(name = "basicAuth"), @SecurityRequirement(name = "bearerToken")}
-, servers = {
-	       @Server(url = "/", description = "Default Server URL")
-	    }
+@OpenAPIDefinition(info = @Info(title = "REST API", version = "1.1"),
+				security = {
+							@SecurityRequirement(name = "basicAuth"), 
+							@SecurityRequirement(name = "bearerToken")
+							}, 
+				servers = {
+							@Server(url = "/", description = "Default Server URL")
+	    				}
 )
 @SecuritySchemes({
 @SecurityScheme(name = "basicAuth", type = SecuritySchemeType.HTTP, scheme = "basic"),
